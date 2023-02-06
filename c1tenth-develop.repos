@@ -1,0 +1,33 @@
+repositories:
+  autoware.ai:
+    type: git
+    url: https://github.com/KBR-CARMA/autoware.ai.git
+    version: c1tenth-develop
+  carma-base:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-base.git
+    version: c1tenth-develop
+  carma-config:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-config.git
+    version: c1tenth-develop
+  carma-messenger:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-messenger.git
+    version: c1tenth-develop
+  carma-msgs:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-msgs.git
+    version: c1tenth-develop
+  carma-utils:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-utils.git
+    version: c1tenth-develop
+  carma-platform:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-platform.git
+    version: c1tenth-develop
+  carma-web-ui:
+    type: git
+    url: https://github.com/KBR-CARMA/carma-web-ui.git
+    version: c1tenth-develop
