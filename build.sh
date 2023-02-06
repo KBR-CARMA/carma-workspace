@@ -1,17 +1,28 @@
 #!/bin/bash
 
-OPTIONS=${@:1}
-HUB="quitter.tech"
+# Fixed branch name for our development
 BRANCH="c1tenth-develop"
+
+# Allow one to manually specify one or more images to build
+OPTIONS=${@:1}
+
+# Packages we want to build -- note that we must build in
+# a specific
 PACKAGES=${OPTIONS:-"carma-base            \
                      autoware.ai           \
                      carma-config          \
                      carma-messenger       \
                      carma-msgs            \
-                     carma-platform"}
+                     carma-platform        \
+                     carma-web-ui"}
 
-# vcs import . < c1tenth-develop.repos
-# vcs pull .
+# Check out packages
+vcs import . < c1tenth-develop.repos
+
+# Pull the latest code
+vcs pull .
+
+# Build each package
 for package in $PACKAGES
 do
     pushd $package
