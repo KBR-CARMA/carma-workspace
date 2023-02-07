@@ -11,17 +11,9 @@ repositories:
     type: git
     url: https://github.com/KBR-CARMA/carma-config.git
     version: c1tenth-develop
-  carma-messenger:
-    type: git
-    url: https://github.com/KBR-CARMA/carma-messenger.git
-    version: c1tenth-develop
   carma-msgs:
     type: git
     url: https://github.com/KBR-CARMA/carma-msgs.git
-    version: c1tenth-develop
-  carma-utils:
-    type: git
-    url: https://github.com/KBR-CARMA/carma-utils.git
     version: c1tenth-develop
   carma-platform:
     type: git

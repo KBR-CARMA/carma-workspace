@@ -87,6 +87,30 @@ Follow the steps in `Installing QEMU` to add an arm64 emulator.
 
 # Building the docker images
 
-On an Ubuntu machine all that is needed is to run ./build.sh to build the code. This will check out the `c1tenth-develop` fork of the CARMA code and the build the images versioned like `usdotfhwastol/carma-base:c1tenth-develop`, ie. by running `./docker/build-image.sh -v c1tenth-develop` on `carma-base`.
+The NVIDIA Jetson base images are protected by oauth, so you need to generate a key. If you don't generate once, after one pull from the repos you will be hit with a 401 Authorization error unless you do this:
 
-# Pushing the docker images to the jetson
+- Step 1: https://ngc.nvidia.com (create an account)
+- Step 2: https://ngc.nvidia.com/setup/installers/cli (download and install the CLI tool)
+- Step 3: https://ngc.nvidia.com/setup/api-key (login to nvcr.io using the API key)
+
+
+Then, all that is required is to run ./build.sh to build the code. This will check out the `c1tenth-develop` fork of the CARMA code and the build the images versioned like `usdotfhwastol/carma-base:c1tenth-develop`, ie. by running `./docker/build-image.sh -v c1tenth-develop` on `carma-base`. At the end of the process you can search for and print the images that were built:
+
+```sh
+asymingt@mars:~/development/carma-ng$ docker image ls | grep c1tenth-develop
+usdotfhwastol/carma-config        c1tenth-develop-development   d5775e60c412   39 minutes ago      4.91MB
+usdotfhwastol/carma-web-ui        c1tenth-develop               b60d3cd1c30e   11 hours ago        914MB
+usdotfhwastol/carma-msgs          c1tenth-develop               95af7e033d34   19 hours ago        16.4GB
+usdotfhwastol/carma-platform      c1tenth-develop               c3d1d1619e62   20 hours ago        10.3GB
+usdotfhwastol/autoware.ai         c1tenth-develop               68b329005977   20 hours ago        10.1GB
+usdotfhwastol/carma-base          c1tenth-develop               11a1bb8fb28a   20 hours ago        9.32GB
+asymingt@mars:~/development/carma-ng$ 
+```
+
+# Pushing the docker images to the Jetson
+
+Once all the images are built the following command should produce similar output to the one below. If you are not seeing any images listed then you are no
+
+```
+[host] docker image ls | grep "c1tenth-develop"
+```
