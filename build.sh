@@ -18,7 +18,7 @@
 set -e
 
 # Fixed branch name for our development
-BRANCH="c1tenth-develop"
+BRANCH=${BRANCH:-"c1tenth-develop"}
 
 # Allow one to manually specify one or more images to build
 OPTIONS=${@:1}
@@ -32,7 +32,7 @@ PACKAGES=${OPTIONS:-"carma-base            \
                      carma-web-ui"}
 
 # Check out packages
-vcs import . < c1tenth-develop.repos
+vcs import . < c1tenth.repos
 
 # Pull the latest code
 vcs pull .
@@ -48,8 +48,11 @@ do
 done
 
 # Build the platform configuration
-pushd carma-config
-    git checkout $BRANCH
-    git pull
-    ./development/build-image.sh -v $BRANCH
-popd
+if [ -z ${OPTIONS} ];
+then
+    pushd carma-config
+        git checkout $BRANCH
+        git pull
+        ./development/build-image.sh -v $BRANCH
+    popd
+fi
