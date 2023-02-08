@@ -43,7 +43,8 @@ do
     pushd $package
     git checkout $BRANCH
     git pull
-    ./docker/build-image.sh  -v $BRANCH
+    ./docker/build-image.sh -v $BRANCH
+    docker tag usdotfhwastol/$package:$BRANCH quitter.tech/$package:$BRANCH
     popd
 done
 
@@ -53,6 +54,10 @@ then
     pushd carma-config
         git checkout $BRANCH
         git pull
-        ./development/build-image.sh -v $BRANCH
+        ./development/build-image.sh
+        docker tag usdotfhwastol/$package:$BRANCH quitter.tech/$package:$BRANCH
     popd
 fi
+
+# Now, you should push them -- but I'm not going to automate that in case
+# somebody runs this and pushes something broken without knowing.

@@ -85,7 +85,9 @@ See: [NVIDIA Installing QEMU](https://docs.nvidia.com/datacenter/cloud-native/pl
 
 Follow the steps in `Installing QEMU` to add an arm64 emulator.
 
-# Building the docker images
+# Building the docker images 
+
+In most instances
 
 The NVIDIA Jetson base images are protected by oauth, so you need to generate a key. If you don't generate once, after one pull from the repos you will be hit with a 401 Authorization error unless you do this:
 
