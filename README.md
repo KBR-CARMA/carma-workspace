@@ -85,7 +85,7 @@ See: [NVIDIA Installing QEMU](https://docs.nvidia.com/datacenter/cloud-native/pl
 
 Follow the steps in `Installing QEMU` to add an arm64 emulator.
 
-# Building the docker images 
+# Building the docker images (optional)
 
 In most instances
 
@@ -109,11 +109,15 @@ usdotfhwastol/carma-base          c1tenth-develop               11a1bb8fb28a   2
 asymingt@mars:~/development/carma-ng$ 
 ```
 
-# Pushing the docker images to the Jetson
+# Running the images (on Jetson or EC2)
 
-Once all the images are built the following command should produce similar output to the one below. If you are not seeing any images listed then you are no
+You can pull and run the stack with this command. Important! This launches from the `docker-compose.yml` file stored locally, as this makes things easier to edit.
 
+```sh
+[target] git clone https://github.com/KBR-CARMA/carma-workspace.git
+[target] cd carma-workspace
+[target] ./image_pull.sh
+[target] ./image_run.sh
 ```
-[host] docker image ls | grep "c1tenth-develop"
-```
-# c1tenth-driver-wrappers
+
+Then port-forward 8080 to your local machine and you should see the web user interface at http://localhost:8080. We don't use port 80 because that port is reserved for our docker hub on EC2.
