@@ -1,3 +1,8 @@
 autoware.*
 carma-*
 c1tenth-driver-wrappers
+dwm1001_ros2
+sllidar_ros2
+bno055
+carma-cohda-dsrc-driver
+vesc

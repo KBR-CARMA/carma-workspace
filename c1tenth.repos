@@ -35,3 +35,27 @@ repositories:
     type: git
     url: git@github.com:KBR-CARMA/carma-web-ui.git
     version: c1tenth-develop
+  c1tenth-driver-wrappers:
+    type: git
+    url: git@github.com:KBR-CARMA/c1tenth-driver-wrappers.git
+    version: c1tenth-develop
+  dwm1001_ros2:
+    type: git
+    url: git@github.com:KBR-CARMA/dwm1001_ros2.git
+    version: c1tenth-develop
+  sllidar_ros2:
+    type: git
+    url: git@github.com:KBR-CARMA/sllidar_ros2.git
+    version: c1tenth-develop
+  bno055:
+    type: git
+    url: git@github.com:KBR-CARMA/bno055.git
+    version: c1tenth-develop
+  carma-cohda-dsrc-driver:
+    type: git
+    url: git@github.com:KBR-CARMA/carma-cohda-dsrc-driver.git
+    version: c1tenth-develop
+  vesc:
+    type: git
+    url: git@github.com:KBR-CARMA/vesc.git
+    version: c1tenth-develop
