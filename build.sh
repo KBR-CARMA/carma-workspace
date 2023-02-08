@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # Exit immediately on error
-set -e
+set -eo pipefail
 
 # Fixed branch name for our development
 BRANCH=${BRANCH:-"c1tenth-develop"}

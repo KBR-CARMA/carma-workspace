@@ -1,8 +1,2 @@
-autoware.ai
-carma-base
-carma-config
-carma-messenger
-carma-msgs
-carma-utils
-carma-platform
-carma-web-ui
+autoware.*
+carma-*
