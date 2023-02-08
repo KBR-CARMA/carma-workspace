@@ -15,6 +15,10 @@ repositories:
     type: git
     url: git@github.com:KBR-CARMA/carma-config.git
     version: c1tenth-develop
+  carma-messenger:
+    type: git
+    url: git@github.com:KBR-CARMA/carma-messenger.git
+    version: c1tenth-develop
   carma-msgs:
     type: git
     url: git@github.com:KBR-CARMA/carma-msgs.git
