@@ -25,11 +25,12 @@ OPTIONS=${@:1}
 
 # Packages we want to build -- note that we must build all packages in
 # a specific order, so please don't change the list order below.
-PACKAGES=${OPTIONS:-"carma-base            \
-                     autoware.ai           \
-                     carma-msgs            \
-                     carma-platform        \
-                     carma-web-ui          \
+PACKAGES=${OPTIONS:-"carma-base             \
+                     autoware.ai            \
+                     carma-msgs             \
+                     carma-platform         \
+                     carma-web-ui           \
+                     c1tenth-driver-wrapers \
                      carma-config"}
 
 # Build each package
