@@ -39,6 +39,10 @@ repositories:
     type: git
     url: git@github.com:KBR-CARMA/c1tenth-driver-wrappers.git
     version: c1tenth-develop
+  transport_drivers:
+    type: git
+    url: git@github.com:KBR-CARMA/transport_drivers.git
+    version: c1tenth-develop
   dwm1001_ros2:
     type: git
     url: git@github.com:KBR-CARMA/dwm1001_ros2.git
