@@ -30,7 +30,7 @@ PACKAGES=${OPTIONS:-"carma-base                 \
                      carma-msgs                 \
                      carma-platform             \
                      carma-web-ui               \
-                     c1tenth-driver-wrapers"}
+                     c1tenth-driver-wrappers"}
 
 # Check out packages
 vcs import . < c1tenth.repos

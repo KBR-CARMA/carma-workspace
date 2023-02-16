@@ -36,6 +36,6 @@ PACKAGES=${OPTIONS:-"carma-base              \
 # Build each package
 for package in $PACKAGES
 do
-    docker pull quitter.tech/$package:$BRANCH
+    docker push quitter.tech/$package:$BRANCH
 done
 
