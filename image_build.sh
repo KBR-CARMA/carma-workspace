@@ -30,6 +30,7 @@ PACKAGES=${OPTIONS:-"carma-base                 \
                      carma-msgs                 \
                      carma-platform             \
                      carma-web-ui               \
+                     carma-cohda-dsrc-driver    \
                      c1tenth-driver-wrappers"}
 
 # Check out packages
