@@ -54,10 +54,7 @@ done
 if [ -z ${OPTIONS} ];
 then
     pushd carma-config
-        git checkout $BRANCH
-        git pull
-        ./development/build-image.sh
-        docker tag usdotfhwastol/$package:$BRANCH quitter.tech/$package:$BRANCH
+        docker build --build-arg CONFIG=c1tenth --tag quitter.tech/carma-config:c1tenth-develop .
     popd
 fi
 
