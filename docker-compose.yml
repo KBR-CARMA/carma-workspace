@@ -6,6 +6,8 @@ services:
   carma-config:
     image: quitter.tech/carma-config:c1tenth-develop
     command: sh
+    stdin_open: true
+    tty: true
 
   carma-web-ui:
     container_name: carma-web-ui    
