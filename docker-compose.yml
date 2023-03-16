@@ -75,7 +75,7 @@ services:
     volumes_from:
       - carma-config
     entrypoint: ""
-    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=imu_driver'
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /home/carma/install/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=imu_driver'
 
   lidar_driver:
     image: quitter.tech/c1tenth-driver-wrappers:c1tenth-develop
@@ -86,7 +86,7 @@ services:
     volumes_from:
       - carma-config
     entrypoint: ""
-    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=lidar_driver'
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /home/carma/install/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=lidar_driver'
 
   vesc_driver:
     image: quitter.tech/c1tenth-driver-wrappers:c1tenth-develop
@@ -97,7 +97,7 @@ services:
     volumes_from:
       - carma-config
     entrypoint: ""
-    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=vesc_driver'
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /home/carma/install/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=vesc_driver'
 
   joy_driver:
     image: quitter.tech/c1tenth-driver-wrappers:c1tenth-develop
@@ -108,7 +108,7 @@ services:
     volumes_from:
       - carma-config
     entrypoint: ""
-    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=joy_driver'
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /home/carma/install/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=joy_driver'
     
   ssc_shim:
     image: quitter.tech/c1tenth-driver-wrappers:c1tenth-develop
@@ -124,5 +124,4 @@ services:
     network_mode: host
     volumes_from:
       - carma-config
-    entrypoint: ""
-    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=dsrc_driver'
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install/setup.bash && ros2 launch /opt/carma/vehicle/config/drivers.launch.py drivers:=dsrc_driver'
