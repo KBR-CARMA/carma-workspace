@@ -96,7 +96,7 @@ The NVIDIA Jetson base images are protected by oauth, so you need to generate a 
 - Step 3: https://ngc.nvidia.com/setup/api-key (login to nvcr.io using the API key)
 
 
-Then, all that is required is to run ./build.sh to build the code. This will check out the `c1tenth-develop` fork of the CARMA code and the build the images versioned like `usdotfhwastol/carma-base:c1tenth-develop`, ie. by running `./docker/build-image.sh -v c1tenth-develop` on `carma-base`. At the end of the process you can search for and print the images that were built:
+Then, all that is required is to run ./image_build.sh to build the code. This will check out the `c1tenth-develop` fork of the CARMA code and then build the images. For example `usdotfhwastol/carma-base:c1tenth-develop`, ie. by running `./docker/build-image.sh -v c1tenth-develop` on `carma-base`. The images are then tagged  At the end of the process you can search for and print the images that were built:
 
 ```sh
 asymingt@mars:~/development/carma-ng$ docker image ls | grep c1tenth-develop
@@ -109,7 +109,7 @@ usdotfhwastol/carma-base          c1tenth-develop               11a1bb8fb28a   2
 asymingt@mars:~/development/carma-ng$ 
 ```
 
-# Running the images (on Jetson or EC2)
+# Running the images (on Jetson or EC2)cd 
 
 You can pull and run the stack with this command. Important! This launches from the `docker-compose.yml` file stored locally, as this makes things easier to edit.
 
