@@ -53,19 +53,24 @@ services:
     network_mode: host
     volumes_from: 
       - carma-config
+    volumes:
+      - /home/c1t-graytruck/carma-platform/carma/launch:/opt/carma/launch/minimal      
     environment:
       - ROS_IP=127.0.0.1
       - ROS_MASTER_URI=http://127.0.0.1:11311
-    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install/setup.bash && roslaunch /opt/carma/vehicle/config/carma_docker.launch'
-
-  # platform_ros2:
-  #   image: quitter.tech/carma-platform:c1tenth-develop
-  #   ipc: host
-  #   network_mode: host
-  #   volumes_from:
-  #     - carma-config
-  #   command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/carma_docker.launch.py'
-
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install/setup.bash && roslaunch /opt/carma/launch/minimal/carma_src.launch'
+  #  command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install/setup.bash && roslaunch /opt/carma/vehicle/config/carma_docker.launch'
+  
+  platform_ros2:
+    image: quitter.tech/carma-platform:c1tenth-develop
+    ipc: host
+    network_mode: host
+    volumes_from:
+      - carma-config
+    volumes:
+      - /home/c1t-graytruck/carma-platform/carma/launch:/opt/carma/launch/minimal       
+    command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/launch/minimal/carma_src.launch.py'
+   # command: bash -c 'wait-for-it.sh localhost:11311 && source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/carma_docker.launch.py'
   # imu_driver:
   #   image: quitter.tech/c1tenth-driver-wrappers:c1tenth-develop
   #   ipc: host
