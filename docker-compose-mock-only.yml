@@ -1,0 +1,28 @@
+# Docker Compose Spec Version
+version: '3.9'
+
+services:
+  
+  rosbridge:
+    image: quitter.tech/c1tenth-driver-wrappers:c1tenth-develop
+    ipc: host
+    network_mode: host
+    volumes:
+      - ~/carma-workspace/c1tenth-driver-wrappers/c1tenth_drivers/launch:/opt/carma/vehicle/config
+    command: bash -c 'source /opt/carma/install_ros2/setup.bash && ros2 launch /opt/carma/vehicle/config/c1tenth_rosbridge.launch.py'
+
+  carma-config:
+    image: quitter.tech/carma-config:c1tenth-develop
+    command: sh
+    stdin_open: true
+    tty: true
+    
+  mock-drivers:
+    image: quitter.tech/carma-platform:c1tenth-develop
+    ipc: host
+    network_mode: host
+    volumes_from:
+      - carma-config
+    entrypoint: ""
+    command: bash -c 'export ROS_NAMESPACE=$${CARMA_INTR_NS} && source /opt/carma/install/setup.bash && roslaunch carma mock_drivers.launch'
+    
